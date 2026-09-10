@@ -22,6 +22,19 @@
 
   <dependencies>
 
+    <!-- Spring Web -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>7.0.2</version>
+    </dependency>
+
     <!-- Spring Core -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -73,6 +86,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.1</version>
+        <configuration>
+          <parameters>true</parameters>
+        </configuration>
       </plugin>
 
       <plugin>
