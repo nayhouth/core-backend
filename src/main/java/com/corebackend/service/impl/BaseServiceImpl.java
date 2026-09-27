@@ -4,7 +4,8 @@ import com.corebackend.entity.BaseEntity;
 import com.corebackend.repository.BaseRepository;
 import com.corebackend.service.BaseService;
 import com.corebackend.util.EntityUpdateUtil;
-
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -23,11 +24,18 @@ public abstract class BaseServiceImpl<T extends BaseEntity>
 
         preCreate(entity);
 
-        entity.setCreatedAt(LocalDateTime.now());
-        entity.setUpdatedAt(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
+        String username = getCurrentUsername();
+
+        entity.setCreatedAt(now);
+        entity.setUpdatedAt(null);
         entity.setModNo(1L);
         entity.setDeleted(false);
         entity.setDeletedAt(null);
+
+        entity.setCreatedBy(username);
+        entity.setUpdatedBy(null);
+        entity.setDeletedBy(null);
 
         T result = repository.save(entity);
 
@@ -76,6 +84,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity>
         EntityUpdateUtil.copyFields(entity, existing);
 
         existing.setUpdatedAt(LocalDateTime.now());
+        existing.setUpdatedBy(getCurrentUsername());
         existing.setModNo(existing.getModNo() + 1);
 
         T result = repository.save(existing);
@@ -98,14 +107,32 @@ public abstract class BaseServiceImpl<T extends BaseEntity>
 
         T entity = optional.get();
 
+        LocalDateTime now = LocalDateTime.now();
+        String username = getCurrentUsername();
+
         entity.setDeleted(true);
-        entity.setDeletedAt(LocalDateTime.now());
-        entity.setUpdatedAt(LocalDateTime.now());
+        entity.setDeletedAt(now);
+        entity.setUpdatedAt(now);
+        entity.setDeletedBy(username);
+        entity.setUpdatedBy(username);
         entity.setModNo(entity.getModNo() + 1);
 
         repository.save(entity);
 
         postDelete(id);
+    }
+
+    private String getCurrentUsername() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication == null
+                || !authentication.isAuthenticated()
+                || authentication.getPrincipal() == null) {
+            return null;
+        }
+
+        return authentication.getName();
     }
 
 

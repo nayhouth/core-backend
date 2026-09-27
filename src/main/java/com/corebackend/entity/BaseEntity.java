@@ -17,8 +17,10 @@ public abstract class BaseEntity {
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+    private String createdBy;
 
     private LocalDateTime updatedAt;
+    private String updatedBy;
 
     @Column(nullable = false)
     private Long modNo;
@@ -27,6 +29,7 @@ public abstract class BaseEntity {
     private boolean isDeleted;
 
     private LocalDateTime deletedAt;
+    private String deletedBy;
 
     public Long getId() {
         return id;
@@ -52,6 +55,18 @@ public abstract class BaseEntity {
         return deletedAt;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public String getDeletedBy() {
+        return deletedBy;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
@@ -71,4 +86,17 @@ public abstract class BaseEntity {
     public void setDeletedAt(LocalDateTime deletedAt) {
         this.deletedAt = deletedAt;
     }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public void setDeletedBy(String deletedBy) {
+        this.deletedBy = deletedBy;
+    }
+
 }
