@@ -1,6 +1,6 @@
-package com.corebackend.repository;
+package com.corebackend.common.repository;
 
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 

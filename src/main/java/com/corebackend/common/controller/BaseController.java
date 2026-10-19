@@ -1,7 +1,7 @@
-package com.corebackend.controller;
+package com.corebackend.common.controller;
 
-import com.corebackend.entity.BaseEntity;
-import com.corebackend.service.BaseService;
+import com.corebackend.common.entity.BaseEntity;
+import com.corebackend.common.service.BaseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

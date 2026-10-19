@@ -1,6 +1,7 @@
-package com.corebackend.repository;
+package com.corebackend.sysconfig.repository;
 
-import com.corebackend.entity.CoreSysConfig;
+import com.corebackend.common.repository.BaseRepository;
+import com.corebackend.sysconfig.entity.CoreSysConfig;
 
 import java.util.Optional;
 

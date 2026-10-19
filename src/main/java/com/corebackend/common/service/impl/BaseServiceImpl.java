@@ -1,9 +1,9 @@
-package com.corebackend.service.impl;
+package com.corebackend.common.service.impl;
 
-import com.corebackend.entity.BaseEntity;
-import com.corebackend.repository.BaseRepository;
-import com.corebackend.service.BaseService;
-import com.corebackend.util.EntityUpdateUtil;
+import com.corebackend.common.entity.BaseEntity;
+import com.corebackend.common.repository.BaseRepository;
+import com.corebackend.common.service.BaseService;
+import com.corebackend.common.util.EntityUpdateUtil;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import java.time.LocalDateTime;

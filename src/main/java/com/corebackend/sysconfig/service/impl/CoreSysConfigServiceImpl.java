@@ -1,8 +1,8 @@
-package com.corebackend.service.impl;
+package com.corebackend.sysconfig.service.impl;
 
-import com.corebackend.entity.CoreSysConfig;
-import com.corebackend.repository.CoreSysConfigRepository;
-import com.corebackend.service.CoreSysConfigService;
+import com.corebackend.sysconfig.entity.CoreSysConfig;
+import com.corebackend.sysconfig.repository.CoreSysConfigRepository;
+import com.corebackend.sysconfig.service.CoreSysConfigService;
 import org.springframework.stereotype.Service;
 
 @Service

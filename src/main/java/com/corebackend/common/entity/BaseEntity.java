@@ -1,4 +1,4 @@
-package com.corebackend.entity;
+package com.corebackend.common.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
