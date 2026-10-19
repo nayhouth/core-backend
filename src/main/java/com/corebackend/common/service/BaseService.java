@@ -1,6 +1,6 @@
-package com.corebackend.service;
+package com.corebackend.common.service;
 
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 
 import java.util.List;
 import java.util.Optional;

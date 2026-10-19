@@ -1,6 +1,6 @@
-package com.corebackend.util;
+package com.corebackend.common.util;
 
-import com.corebackend.entity.BaseEntity;
+import com.corebackend.common.entity.BaseEntity;
 
 import java.lang.reflect.Field;
 
