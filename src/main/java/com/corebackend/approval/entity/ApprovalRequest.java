@@ -7,9 +7,13 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "core_approval_request")
 public class ApprovalRequest extends BaseEntity {
@@ -41,76 +45,4 @@ public class ApprovalRequest extends BaseEntity {
 
     @Column(name = "submitted_at", nullable = false)
     private LocalDateTime submittedAt;
-
-    public ApprovalFlow getFlow() {
-        return flow;
-    }
-
-    public void setFlow(ApprovalFlow flow) {
-        this.flow = flow;
-    }
-
-    public String getRequestCode() {
-        return requestCode;
-    }
-
-    public void setRequestCode(String requestCode) {
-        this.requestCode = requestCode;
-    }
-
-    public String getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(String objectType) {
-        this.objectType = objectType;
-    }
-
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
-
-    public String getRequesterId() {
-        return requesterId;
-    }
-
-    public void setRequesterId(String requesterId) {
-        this.requesterId = requesterId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getRequestData() {
-        return requestData;
-    }
-
-    public void setRequestData(String requestData) {
-        this.requestData = requestData;
-    }
-
-    public LocalDateTime getSubmittedAt() {
-        return submittedAt;
-    }
-
-    public void setSubmittedAt(LocalDateTime submittedAt) {
-        this.submittedAt = submittedAt;
-    }
 }

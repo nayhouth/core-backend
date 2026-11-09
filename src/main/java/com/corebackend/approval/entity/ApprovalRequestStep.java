@@ -7,9 +7,13 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "core_approval_request_step")
 public class ApprovalRequestStep extends BaseEntity {
@@ -36,60 +40,4 @@ public class ApprovalRequestStep extends BaseEntity {
 
     @Column(name = "comment", length = 1000)
     private String comment;
-
-    public ApprovalRequest getRequest() {
-        return request;
-    }
-
-    public void setRequest(ApprovalRequest request) {
-        this.request = request;
-    }
-
-    public ApprovalFlowStep getFlowStep() {
-        return flowStep;
-    }
-
-    public void setFlowStep(ApprovalFlowStep flowStep) {
-        this.flowStep = flowStep;
-    }
-
-    public Integer getStepOrder() {
-        return stepOrder;
-    }
-
-    public void setStepOrder(Integer stepOrder) {
-        this.stepOrder = stepOrder;
-    }
-
-    public String getApproverId() {
-        return approverId;
-    }
-
-    public void setApproverId(String approverId) {
-        this.approverId = approverId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getActionAt() {
-        return actionAt;
-    }
-
-    public void setActionAt(LocalDateTime actionAt) {
-        this.actionAt = actionAt;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 }

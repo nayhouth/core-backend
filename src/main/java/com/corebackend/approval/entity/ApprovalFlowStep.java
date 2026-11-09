@@ -7,7 +7,11 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "core_approval_flow_step")
 public class ApprovalFlowStep extends BaseEntity {
@@ -27,44 +31,4 @@ public class ApprovalFlowStep extends BaseEntity {
 
     @Column(name = "step_name", length = 200)
     private String stepName;
-
-    public ApprovalFlow getFlow() {
-        return flow;
-    }
-
-    public void setFlow(ApprovalFlow flow) {
-        this.flow = flow;
-    }
-
-    public Integer getStepOrder() {
-        return stepOrder;
-    }
-
-    public void setStepOrder(Integer stepOrder) {
-        this.stepOrder = stepOrder;
-    }
-
-    public String getApproverType() {
-        return approverType;
-    }
-
-    public void setApproverType(String approverType) {
-        this.approverType = approverType;
-    }
-
-    public String getApproverValue() {
-        return approverValue;
-    }
-
-    public void setApproverValue(String approverValue) {
-        this.approverValue = approverValue;
-    }
-
-    public String getStepName() {
-        return stepName;
-    }
-
-    public void setStepName(String stepName) {
-        this.stepName = stepName;
-    }
 }

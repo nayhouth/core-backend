@@ -1,11 +1,14 @@
-
 package com.corebackend.approval.entity;
 
 import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "core_approval_flow")
 public class ApprovalFlow extends BaseEntity {
@@ -34,67 +37,6 @@ public class ApprovalFlow extends BaseEntity {
     @Column(nullable = false, length = 1)
     private String active = "Y";
 
-    public String getFlowCode() {
-        return flowCode;
-    }
-
-    public void setFlowCode(String flowCode) {
-        this.flowCode = flowCode;
-    }
-
-    public String getFlowName() {
-        return flowName;
-    }
-
-    public void setFlowName(String flowName) {
-        this.flowName = flowName;
-    }
-
-    public String getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(String objectType) {
-        this.objectType = objectType;
-    }
-
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
-
-    public String getConditionType() {
-        return conditionType;
-    }
-
-    public void setConditionType(String conditionType) {
-        this.conditionType = conditionType;
-    }
-
-    public String getConditionConfig() {
-        return conditionConfig;
-    }
-
-    public void setConditionConfig(String conditionConfig) {
-        this.conditionConfig = conditionConfig;
-    }
-
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
-    public String getActive() {
-        return active;
-    }
-
-    public void setActive(String active) {
-        this.active = active;
-    }
+    @Column(name = "workspace_id")
+    private Long workspaceId;
 }

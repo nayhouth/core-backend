@@ -4,7 +4,11 @@ import com.corebackend.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "core_sys_config")
 public class CoreSysConfig extends BaseEntity {
@@ -23,44 +27,4 @@ public class CoreSysConfig extends BaseEntity {
 
     @Column(nullable = false, length = 1)
     private String active;
-
-    public String getConfigGroup() {
-        return configGroup;
-    }
-
-    public void setConfigGroup(String configGroup) {
-        this.configGroup = configGroup;
-    }
-
-    public String getConfigKey() {
-        return configKey;
-    }
-
-    public void setConfigKey(String configKey) {
-        this.configKey = configKey;
-    }
-
-    public String getConfigValue() {
-        return configValue;
-    }
-
-    public void setConfigValue(String configValue) {
-        this.configValue = configValue;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getActive() {
-        return active;
-    }
-
-    public void setActive(String active) {
-        this.active = active;
-    }
 }
